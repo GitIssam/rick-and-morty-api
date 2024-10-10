@@ -1,5 +1,8 @@
 package org.mathieu.domain.models.character
 
+import androidx.room.Ignore
+import org.mathieu.domain.models.locationPreview.LocationPreview
+
 /**
  * Represents a detailed characterization, typically derived from a data source or API.
  *
@@ -22,7 +25,9 @@ data class Character(
     val gender: CharacterGender,
     val origin: Pair<String, Int>,
     val location: Pair<String, Int>,
-    val avatarUrl: String
+    val avatarUrl: String,
+    @Ignore // Car je n'arrive pas à gérer la propriété dans le CharacterObject
+    val locationPrev: List<LocationPreview>
 )
 
 /**

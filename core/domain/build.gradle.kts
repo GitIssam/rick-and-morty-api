@@ -41,4 +41,5 @@ dependencies {
     //Koin
     implementation( "io.insert-koin:koin-androidx-compose:$koinVersion")
     implementation("io.insert-koin:koin-android:$koinVersion")
+    implementation("androidx.room:room-common:2.6.1")
 }

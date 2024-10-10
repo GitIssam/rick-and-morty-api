@@ -32,6 +32,7 @@ internal data class CharacterResponse(
     val episode: List<String>,
     val url: String,
     val created: String,
+
 )
 
 @Serializable

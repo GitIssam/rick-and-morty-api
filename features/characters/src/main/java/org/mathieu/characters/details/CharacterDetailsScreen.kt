@@ -69,7 +69,6 @@ private fun CharacterDetailsContent(
     state: UIState = UIState(),
     onClickBack: () -> Unit = { }
 ) = Scaffold(topBar = {
-
     Row(
         modifier = Modifier
             .background(org.mathieu.ui.theme.Purple40)
@@ -109,9 +108,7 @@ private fun CharacterDetailsContent(
                     lineHeight = 36.sp
                 )
             } ?: Box(modifier = Modifier.fillMaxSize()) {
-
                 Box(Modifier.align(Alignment.TopCenter)) {
-
                     SubcomposeAsyncImage(
                         modifier = Modifier
                             .blur(100.dp)
@@ -135,8 +132,6 @@ private fun CharacterDetailsContent(
                                 )
                             )
                     )
-
-
                 }
 
                 Column(
@@ -155,13 +150,16 @@ private fun CharacterDetailsContent(
                     Spacer(modifier = Modifier.height(12.dp))
 
                     Text(text = state.name)
+
+                    // Affiche la location du personnage
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(text = "Location: ${state.location}")
                 }
-
-
             }
         }
     }
 }
+
 
 
 @Preview

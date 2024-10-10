@@ -15,9 +15,15 @@ class CharacterDetailsViewModel(application: Application) : org.mathieu.ui.ViewM
         fetchData(
             source = { characterRepository.getCharacter(id = characterId) }
         ) {
-
             onSuccess {
-                updateState { copy(avatarUrl = it.avatarUrl, name = it.name, error = null) }
+                updateState {
+                    copy(
+                        avatarUrl = it.avatarUrl,
+                        name = it.name,
+                        location = it.location.first, // Exemple d'affichage du nom de la location
+                        error = null
+                    )
+                }
             }
 
             onFailure {
@@ -27,8 +33,6 @@ class CharacterDetailsViewModel(application: Application) : org.mathieu.ui.ViewM
             updateState { copy(isLoading = false) }
         }
     }
-
-
 }
 
 
@@ -36,5 +40,7 @@ data class CharacterDetailsState(
     val isLoading: Boolean = true,
     val avatarUrl: String = "",
     val name: String = "",
-    val error: String? = null
+    val error: String? = null,
+    // prop pour stocké la location
+    val location: String = ""
 )
